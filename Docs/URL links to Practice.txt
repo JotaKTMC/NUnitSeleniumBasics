@@ -1,0 +1,8 @@
+	
+	(Task 2) Working with Chrome - https://test.qatechhub.com
+	(Task 3) Contact Us page - https://test.qatechhub.com/contact-us/
+	(Task 4) Dropdown and Radio button - https://test.qatechhub.com/form-elements/
+	(Task 5) Drag and Drop -  https://test.qatechhub.com/drag-and-drop/
+	(Task 6) Alert Handling - https://test.qatechhub.com/alert-handling/
+	
+	

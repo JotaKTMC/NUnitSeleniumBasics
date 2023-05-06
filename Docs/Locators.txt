@@ -1,0 +1,13 @@
+
+	
+	Id
+	Name
+	Classname
+	Tagname
+	CssSelector
+	Linktext
+	PartialLinkText
+	XPath
+	
+	Basic syntax of XPath - 
+	//tagname[@attribute='value']
