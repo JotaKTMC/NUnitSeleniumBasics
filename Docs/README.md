@@ -27,6 +27,13 @@ pero si le damos play vemos que si hace el test, y se lista.
 
 
 - Broware developer tools has great option tu use XPath. Just press Ctr+F and search box appers with the alternative:
-Eg. //input[@value='Female']
+Examples:
+  - //input[@value='Female']
+  - //table[@id='customer']/tbody/td
+
+### Questions
+What is the difference between driver.close() and driver.quit() methods in Selenium? 
+- driver.close() method closes the currently active window and driver.quit() method closes all the opened windows
+
 
 
