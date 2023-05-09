@@ -1,11 +1,14 @@
 using System;
+using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 
 namespace LearningSelenium
 {
-    public class WorkingWithTextBox
+    public class WorkingWithWindowsAlerts
     {
         // Selenium components
         IWebDriver Driver;
@@ -20,21 +23,18 @@ namespace LearningSelenium
             Driver.Manage().Window.Maximize(); // Full screen
             Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Driver.Url = "https://test.qatechhub.com/contact-us/";
+            Driver.Url = "https://test.qatechhub.com/alert-handling/";
         }
 
         [Test]
-        public void VerifyContactUsFormFill()
+        public void VerifyAlerts()
         {
-            Driver.FindElement(By.Id("wpforms-20-field_0")).SendKeys("Jota");
-            Driver.FindElement(By.Name("wpforms[fields][0][last]")).SendKeys("Aguirre");
-            Driver.FindElement(By.Id("wpforms-20-field_1")).SendKeys("jota@gmail.com");
-            Driver.FindElement(By.Id("wpforms-20-field_2")).SendKeys("Comment");
-            Driver.FindElement(By.Name("wpforms[submit]")).Click();
-            
-            string expectedMessage= "Thanks for contacting us! We will be in touch with you shortly.";
-            string currentMesssage=Driver.FindElement(By.Id("wpforms-confirmation-20")).Text;
-            Assert.AreEqual(expectedMessage,currentMesssage);
+            // Normal Alert
+            Driver.FindElement(By.Id("NormalAlert")).Click();
+            Thread.Sleep(5000);
+            IAlert alert1= Driver.SwitchTo().Alert();
+            Console.Write("Alert message"+alert1.Text);
+            alert1.Accept();
         }
 
         [TearDown] 
